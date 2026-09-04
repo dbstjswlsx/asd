@@ -1,0 +1,2 @@
+import type { Course } from '../types'
+export default function CourseCard({course,onClick}:{course:Course;onClick:()=>void}) { return <button className="course-card" onClick={onClick}><div className="card-top"><span className="tag">{course.category}</span><span className="price">{course.price===0?'무료':course.price+' P'}</span></div><strong>{course.title}</strong><p>{course.intro}</p><div className="card-meta"><span>{course.creator.avatar} {course.creator.nickname}</span><span>♥ {course.like_count} · 구매 {course.purchase_count}</span></div></button> }
