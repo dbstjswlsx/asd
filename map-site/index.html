@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>내 지도</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="map"></div>
+
+  <aside class="panel" id="panel">
+    <header class="panel-head">
+      <h1>📍 내 지도</h1>
+      <button class="icon-btn" id="toggle-panel" aria-label="패널 접기">▾</button>
+    </header>
+
+    <div class="panel-body">
+      <form class="search" id="search-form">
+        <input id="search-input" type="search" placeholder="장소·주소 검색 (예: 남산타워)" autocomplete="off" />
+        <button type="submit">검색</button>
+      </form>
+      <ul class="results" id="results"></ul>
+
+      <div class="actions">
+        <button id="locate-btn">◎ 내 위치</button>
+        <button id="fit-btn">▣ 저장한 곳 모두 보기</button>
+      </div>
+
+      <section class="saved">
+        <h2>저장한 장소 <span id="saved-count">0</span></h2>
+        <p class="hint">지도를 클릭하면 그 위치를 저장할 수 있어요.</p>
+        <ul id="saved-list"></ul>
+      </section>
+    </div>
+  </aside>
+
+  <div class="coords" id="coords">—</div>
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
